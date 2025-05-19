@@ -9,13 +9,21 @@ namespace TDDExcerciseSession4
 
             Assert.NotNull(name);
         }
+
+        [Fact]
+        public void TestReturnsNumber()
+        {
+            string name = new ExecutionParser().Execute("sdfdfsf");
+
+            Assert.True(int.TryParse(name, out var _));
+        }
     }
 
     public class ExecutionParser
     {
         public string Execute(string input)
         {
-            return input;
+            return input.Length.ToString();
         }
     }
 }
