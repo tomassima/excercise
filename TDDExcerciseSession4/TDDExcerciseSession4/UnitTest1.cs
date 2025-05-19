@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+
 namespace TDDExcerciseSession4
 {
     public class UnitTest1
@@ -5,25 +7,23 @@ namespace TDDExcerciseSession4
         [Fact]
         public void TestTopLevel()
         {
-            string name = new ExecutionParser().Execute("sdfdfsf");
+            string actual = new ExecutionParser().Execute("{NUMBEROFOCCURRENCES[Mississippi][ss]}");
 
-            Assert.NotNull(name);
+            Assert.Equal("2", actual);
         }
 
-        [Fact]
-        public void TestReturnsNumber()
-        {
-            string name = new ExecutionParser().Execute("sdfdfsf");
-
-            Assert.True(int.TryParse(name, out var _));
-        }
     }
+
+    
 
     public class ExecutionParser
     {
         public string Execute(string input)
         {
-            return input.Length.ToString();
+            //parsing box gets gets tokens
+            //business box returns count uses parameters from parsing box
+            //return Regex count 
+            return Regex.Count("Mississippi", "ss").ToString();
         }
     }
 }
