@@ -3,7 +3,7 @@ namespace TDDExcerciseSession4
     public class UnitTest1
     {
         [Fact]
-        public void Test1()
+        public void TestTopLevel()
         {
             string name = new ExecutionParser().Execute("sdfdfsf");
 
@@ -13,9 +13,9 @@ namespace TDDExcerciseSession4
 
     public class ExecutionParser
     {
-        public string Execute(string sdfdfsf)
+        public string Execute(string input)
         {
-            return sdfdfsf;
+            return input;
         }
     }
 }
