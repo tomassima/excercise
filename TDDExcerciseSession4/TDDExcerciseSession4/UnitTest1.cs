@@ -14,7 +14,13 @@ namespace TDDExcerciseSession4
 
     }
 
-    
+    public class BussinessBox
+    {
+        public int Count(string input, string pattern)
+        {
+            return Regex.Matches(input, pattern).Count;
+        }
+    }
 
     public class ExecutionParser
     {
@@ -23,7 +29,7 @@ namespace TDDExcerciseSession4
             //parsing box gets gets tokens
             //business box returns count uses parameters from parsing box
             //return Regex count 
-            return Regex.Count("Mississippi", "ss").ToString();
+            return new BussinessBox().Count("Mississippi", "ss").ToString();
         }
     }
 }
